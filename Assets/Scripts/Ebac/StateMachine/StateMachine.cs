@@ -3,51 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
-public class StateMachine : MonoBehaviour
+public class Test
 {
-  public enum States
+    public enum Test2
     {
-        NONE,
+        NONE
     }
 
+    public void Aa()
+    {
+        StateMachine<Test2> stateMachine = new StateMachine<Test2>();
 
-    public Dictionary<States, StateBase> dictionaryState;
+        stateMachine.RegisterStates(Test.Test2.NONE, new StateBase());
+    }
+}
+
+public class StateMachine<T> where T : System.Enum
+{
+    public Dictionary<T, StateBase> dictionaryState;
 
     private StateBase _currenteState;
     public float timeToStartGame = 1f;
 
 
-    private void Awake()
+
+    public StateBase CurrentState
     {
-        dictionaryState = new Dictionary<States, StateBase>();
-        dictionaryState.Add(States.NONE, new StateBase());
-
-        SwitchState(States.NONE);
-
-        Invoke(nameof(StartGame), timeToStartGame);
+        get { return _currenteState; }
     }
 
-    [Button]
-    private void StartGame()
+    public void Init()
     {
-        SwitchState(States.NONE);
+        dictionaryState = new Dictionary<T, StateBase>();
     }
 
-#if UNITY_EDITOR
-    #region DEBUG
-    [Button]
-    private void ChangeStateToStateX()
+    public void RegisterStates(T typeEnum, StateBase state)
     {
-        SwitchState(States.NONE);
-    }
-    private void ChangeStateToStateY()
-    {
-        SwitchState(States.NONE);
+        dictionaryState.Add(typeEnum, state);
     }
 
-    #endregion
-#endif
-    public void SwitchState(States state)
+    public void SwitchState(T state)
     {
         if (_currenteState != null) _currenteState.OnStateExit();
 
@@ -56,14 +51,8 @@ public class StateMachine : MonoBehaviour
         _currenteState.OnStateEnter();
     }
 
-
-    private void Update()
+    public void Update()
     {
         if (_currenteState != null) _currenteState.OnStateStay();
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            //SwitchState(States.NONE);
-        }
     }
 }
