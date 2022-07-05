@@ -2,57 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using System;
 
-public class Test
+namespace Ebac.StateMachine
 {
-    public enum Test2
+    public class StateMachine<T> where T : System.Enum
     {
-        NONE
-    }
+        public Dictionary<T, StateBase> dictionaryState;
 
-    public void Aa()
-    {
-        StateMachine<Test2> stateMachine = new StateMachine<Test2>();
-
-        stateMachine.RegisterStates(Test.Test2.NONE, new StateBase());
-    }
-}
-
-public class StateMachine<T> where T : System.Enum
-{
-    public Dictionary<T, StateBase> dictionaryState;
-
-    private StateBase _currenteState;
-    public float timeToStartGame = 1f;
+        private StateBase _currenteState;
+        public float timeToStartGame = 1f;
 
 
 
-    public StateBase CurrentState
-    {
-        get { return _currenteState; }
-    }
+        public StateBase CurrentState
+        {
+            get { return _currenteState; }
+        }
 
-    public void Init()
-    {
-        dictionaryState = new Dictionary<T, StateBase>();
-    }
+        public void Init()
+        {
+            dictionaryState = new Dictionary<T, StateBase>();
+        }
 
-    public void RegisterStates(T typeEnum, StateBase state)
-    {
-        dictionaryState.Add(typeEnum, state);
-    }
+        public void RegisterStates(T typeEnum, StateBase state)
+        {
+            dictionaryState.Add(typeEnum, state);
+        }
 
-    public void SwitchState(T state)
-    {
-        if (_currenteState != null) _currenteState.OnStateExit();
+        public void SwitchState(T state)
+        {
+            if (_currenteState != null) _currenteState.OnStateExit();
 
-        _currenteState = dictionaryState[state];
+            _currenteState = dictionaryState[state];
 
-        _currenteState.OnStateEnter();
-    }
+            _currenteState.OnStateEnter();
+        }
 
-    public void Update()
-    {
-        if (_currenteState != null) _currenteState.OnStateStay();
+        public void Update()
+        {
+            if (_currenteState != null) _currenteState.OnStateStay();
+        }
     }
 }
