@@ -11780,7 +11780,7 @@ GameObject:
   - component: {fileID: 2126761275}
   - component: {fileID: 2126761274}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: GunBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11795,13 +11795,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2126761273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285f0782a0fb7e24d944a0bd4963d57b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b728eefcfcf5d94dba64d5e4169419c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 643422654720521221, guid: 079cbbcc39417594bb7f301f51477d15, type: 3}
   positionToShoot: {fileID: 853022559}
   timeBetweenShoot: 0.3
   shoot: 102
+  maxShoot: 5
+  timeToRecharge: 1
 --- !u!23 &2126761275
 MeshRenderer:
   m_ObjectHideFlags: 0
