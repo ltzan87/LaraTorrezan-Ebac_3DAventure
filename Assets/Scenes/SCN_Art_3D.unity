@@ -1767,7 +1767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4538,7 +4538,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859246632}
-  m_LocalRotation: {x: 0.1891075, y: -0.00000003271879, z: 0.0000000063010623, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: 6.3162773e-15, z: -1.2950366e-15, w: 0.9819564}
   m_LocalPosition: {x: 418.09, y: 1.31, z: 33.382454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7752,7 +7752,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.1891075, y: -0.00000003271879, z: 0.0000000063010623, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: 6.3162773e-15, z: -1.2950366e-15, w: 0.9819564}
   m_LocalPosition: {x: 418.09, y: 1.31, z: 33.382454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -11082,6 +11082,7 @@ GameObject:
   - component: {fileID: 2059519313}
   - component: {fileID: 2059519312}
   - component: {fileID: 2059519310}
+  - component: {fileID: 2059519311}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -11104,11 +11105,24 @@ MonoBehaviour:
   characterController: {fileID: 2059519312}
   animator: {fileID: 995815066}
   gravity: 29.4
-  speed: 25
-  turnSpeed: 300
+  speed: 30
+  turnSpeed: 500
   jumpSpeed: 15
   keyRun: 304
   speedRun: 1.5
+--- !u!114 &2059519311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059519309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b8978ca79817a48bb7828f4532a940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunBase: {fileID: 2126761274}
 --- !u!143 &2059519312
 CharacterController:
   m_ObjectHideFlags: 0
@@ -11138,8 +11152,8 @@ Transform:
   m_LocalPosition: {x: 418.09, y: -6.69, z: 48.382454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2126761277}
   - {fileID: 333152257}
+  - {fileID: 2126761277}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11850,7 +11864,7 @@ Transform:
   m_Children:
   - {fileID: 853022559}
   m_Father: {fileID: 2059519313}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &623817977140612860
 PrefabInstance:
