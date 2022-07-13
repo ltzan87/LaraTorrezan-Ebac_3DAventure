@@ -10,6 +10,8 @@ namespace Enemy
     {
         public float startLife = 10f;
         public Collider collider;
+        public FlashColor flashColor;
+        public ParticleSystem particleSystem;
 
         [Header("Start Animation")]
         public float startAnimationDuration = .2f;
@@ -51,6 +53,9 @@ namespace Enemy
 
         public void OnDamage(float f)
         {
+            if(flashColor != null) flashColor.Flash();
+            if(particleSystem != null) particleSystem.Emit(15);
+
             _currentLife -= f;
 
             if(_currentLife <= 0)
