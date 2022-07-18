@@ -42,7 +42,10 @@ namespace Boss
         private void Awake() {
             Init();
             OnValidate();
-            healthBase.OnKill += OnBossKill;
+            if(healthBase != null)
+            {
+                healthBase.OnKill += OnBossKill;
+            }
         }
 
         private void Init()
