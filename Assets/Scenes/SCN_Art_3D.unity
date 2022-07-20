@@ -764,6 +764,7 @@ Transform:
   - {fileID: 2059519313}
   - {fileID: 731845389}
   - {fileID: 1374778092}
+  - {fileID: 1523226901}
   m_Father: {fileID: 1656213951}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1494,6 +1495,7 @@ GameObject:
   - component: {fileID: 273821403}
   - component: {fileID: 273821402}
   - component: {fileID: 273821401}
+  - component: {fileID: 273821404}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1576,6 +1578,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &273821404
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273821399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 587.7797, y: -423.35547, z: 183.92648}
 --- !u!1001 &288409840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3010,7 +3029,7 @@ GameObject:
   - component: {fileID: 460005506}
   - component: {fileID: 460005507}
   m_Layer: 0
-  m_Name: CM vcam1 RUN
+  m_Name: CM vcam1 IDLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3023,13 +3042,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460005505}
-  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583564, w: 0.17029096}
+  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583566, w: 0.17029092}
   m_LocalPosition: {x: 17.980011, y: 3.1343145, z: -26.580002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1539860431}
   m_Father: {fileID: 1511559857}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &460005507
 MonoBehaviour:
@@ -3090,7 +3109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467353928}
-  m_LocalRotation: {x: -1.4752966e-16, y: 0.99033433, z: -0.1387012, w: -8.624239e-16}
+  m_LocalRotation: {x: 1.4752966e-16, y: 0.99033433, z: -0.1387012, w: 8.624239e-16}
   m_LocalPosition: {x: 17.980011, y: 3.1343145, z: -26.580002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5671,8 +5690,9 @@ GameObject:
   m_Component:
   - component: {fileID: 859246634}
   - component: {fileID: 859246633}
+  - component: {fileID: 859246635}
   m_Layer: 0
-  m_Name: CM vcam1 IDLE
+  m_Name: CM vcam1 RUN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5720,14 +5740,31 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859246632}
-  m_LocalRotation: {x: 0.1891075, y: -0.00000003271879, z: 0.0000000063010623, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: 6.3162773e-15, z: -1.2950366e-15, w: 0.9819564}
   m_LocalPosition: {x: 17.980011, y: 8.134315, z: -48.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 273821400}
   m_Father: {fileID: 1511559857}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &859246635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859246632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa38add7681889b4c97d7ac4246eaa7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 859246633}
+  shakeTime: 0
+  amplitude: 3
+  frequency: 1
+  time: 0.2
 --- !u!1001 &864327008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9250,7 +9287,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583564, w: 0.17029096}
+  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583566, w: 0.17029092}
   m_LocalPosition: {x: 424.42618, y: -3.69, z: 29.879139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9454,8 +9491,8 @@ MonoBehaviour:
   m_LayerIndex: 0
   m_ShowDebugText: 0
   m_ChildCameras:
-  - {fileID: 859246633}
   - {fileID: 460005507}
+  - {fileID: 859246633}
   - {fileID: 467353930}
   m_Instructions:
   - m_FullHash: -178524345
@@ -9498,8 +9535,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 859246634}
   - {fileID: 460005506}
+  - {fileID: 859246634}
   - {fileID: 467353929}
   m_Father: {fileID: 163782768}
   m_RootOrder: 1
@@ -9594,12 +9631,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523226898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 478.6, y: -0.6, z: 51.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 72.15384, y: 6.2243147, z: -4.75914}
   m_LocalScale: {x: 17.999329, y: 17.999329, z: 17.999329}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 123135882}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1531140405
 PrefabInstance:
@@ -10408,6 +10445,7 @@ Transform:
   - {fileID: 163782768}
   - {fileID: 1851432494}
   - {fileID: 123135882}
+  - {fileID: 2009298262}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12540,12 +12578,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009298261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 406.44617, y: -6.8243146, z: 56.45914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1224999564}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1656213951}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2010791386
 GameObject:
