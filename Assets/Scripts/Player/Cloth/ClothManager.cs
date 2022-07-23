@@ -8,9 +8,10 @@ namespace Cloth
     public enum ClothType
     {
         SPEED,
+        STRONG
     }
 
-    public class ClothManager : Singleton<ClothChanger>
+    public class ClothManager : Singleton<ClothManager>
     {
         //Instance = this;
 
