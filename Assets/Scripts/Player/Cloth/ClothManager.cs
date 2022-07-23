@@ -8,11 +8,12 @@ namespace Cloth
     public enum ClothType
     {
         SPEED,
-
     }
 
     public class ClothManager : Singleton<ClothChanger>
     {
+        //Instance = this;
+
         public List<ClothSetup> clothSetups;
 
         public ClothSetup GetSetupByType(ClothType clothType)
