@@ -9,7 +9,10 @@ public class PlayerMagneticTrigger : MonoBehaviour
         CollactableBase i = other.transform.GetComponent<CollactableBase>();
         if(i != null)
         {
-            i.gameObject.AddComponent<Magnetic>();
+            if(i.gameObject.AddComponent<Magnetic>() == null)
+            {
+                i.gameObject.AddComponent<Magnetic>();
+            }
         }
     }
 }
