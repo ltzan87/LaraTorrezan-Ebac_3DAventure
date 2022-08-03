@@ -9,8 +9,23 @@ public class GunBase : MonoBehaviour
     public float timeBetweenShoot = .3f;
     public float speed = 50f;
 
+    public KeyCode keyCode = KeyCode.Z;
+
     private Coroutine _currentCoroutine;
 
+
+    
+    private void Update() {
+        if(Input.GetKeyDown(keyCode))
+        {
+            _currentCoroutine = StartCoroutine(ShootCoroutine());
+        }
+        else if(Input.GetKeyUp(keyCode))
+        {
+            if(_currentCoroutine != null)
+                StopCoroutine(_currentCoroutine);
+        }
+    }
 
     protected virtual IEnumerator ShootCoroutine()
     {
@@ -28,7 +43,7 @@ public class GunBase : MonoBehaviour
         projectile.transform.rotation = positionToShoot.rotation;
         projectile.speed = speed;
 
-        ShakeCamera.Instance.Shake();
+        //ShakeCamera.Instance.Shake();
     }
 
     public void StartShoot()
