@@ -7,6 +7,7 @@ namespace Items
 {
     public class CollactableBase : MonoBehaviour
     {  
+        public VFXType vFXType;
         public ItemType itemType;
 
         public string compareTag = "Player";
@@ -31,12 +32,18 @@ namespace Items
             }
         }
 
+        private void PlaySFX()
+        {
+            SFXPool.Instance.Play(vFXType);
+        }
+
         protected virtual void Collect()
         {
+            PlaySFX();
             if(collider != null) collider.enabled = false;
             if(graphicItem != null) graphicItem.SetActive(false);
             Invoke(nameof(HideObject), timeToHide);
-            OnCollect();       
+            OnCollect();  
         }
 
         private void HideObject()

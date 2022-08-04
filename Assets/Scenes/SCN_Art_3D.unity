@@ -5080,6 +5080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1954436785}
+  - {fileID: 1976867344}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12525,7 +12526,7 @@ GameObject:
   - component: {fileID: 1954436787}
   - component: {fileID: 1954436786}
   m_Layer: 0
-  m_Name: EnvironmentMusic
+  m_Name: MUSIC_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12791,6 +12792,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1285975676195205452, guid: 414808376a9f32149b6039f44bc1a48e, type: 3}
   m_PrefabInstance: {fileID: 1967990302}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1976867343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976867344}
+  - component: {fileID: 1976867345}
+  m_Layer: 0
+  m_Name: SFXPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1976867344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976867343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 858256260}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1976867345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976867343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eb1dd9a275b484680753aa5a92e3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 25
 --- !u!1001 &1996666715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14746,6 +14791,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8559309155891825462, guid: c8fcb63dd4a971440b99cadd73d5f625, type: 3}
+      propertyPath: vFXSetups.Array.data[0].vFXType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559309155891825462, guid: c8fcb63dd4a971440b99cadd73d5f625, type: 3}
+      propertyPath: vFXSetups.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8fcb63dd4a971440b99cadd73d5f625, type: 3}
 --- !u!4 &8763300522578396696 stripped
