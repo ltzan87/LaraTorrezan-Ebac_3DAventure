@@ -60,6 +60,20 @@ public class SaveManager : Singleton<SaveManager>
         Save();
     }
 
+    public void SaveLife()
+    {
+        //_saveSetup.health = HealthBase.Instance.
+        Save();
+    }
+
+    public void SaveLastCheckpoint(int level)
+    {
+        _saveSetup.lastLevel = level;
+        SaveItems();
+        SaveLife();
+        Save();
+    }
+
     public void SaveLastLevel(int level)
     {
         _saveSetup.lastLevel = level;
@@ -75,7 +89,7 @@ public class SaveManager : Singleton<SaveManager>
     }
 
     [NaughtyAttributes.Button]
-    private void Load()
+    public void Load()
     {
         string fileLoaded = "";
 

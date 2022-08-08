@@ -6,6 +6,7 @@ using Cloth;
 
 public class HealthBase : MonoBehaviour, IDamageable
 {
+
     public float startLife = 10f;
     public bool destroyOnKill = false;
 
@@ -72,6 +73,7 @@ public class HealthBase : MonoBehaviour, IDamageable
             uIFillUpdater.ForEach(i => i.UpdateValue((float) _currentLife / startLife));
         }
     }
+
 
     public void ChangeDamageMultiply(float damage, float duration)
     {
