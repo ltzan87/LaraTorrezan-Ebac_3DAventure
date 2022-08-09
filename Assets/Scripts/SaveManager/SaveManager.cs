@@ -50,7 +50,7 @@ public class SaveManager : Singleton<SaveManager>
     public void SaveItems()
     {
         _saveSetup.coins = Items.ItemManager.Instance.GetItemByType(Items.ItemType.COIN).soInt.value;
-        _saveSetup.health = Items.ItemManager.Instance.GetItemByType(Items.ItemType.LIFE_PACK).soInt.value;
+        _saveSetup.lifePack = Items.ItemManager.Instance.GetItemByType(Items.ItemType.LIFE_PACK).soInt.value;
         Save();
     }
 
@@ -60,17 +60,17 @@ public class SaveManager : Singleton<SaveManager>
         Save();
     }
 
-    public void SaveLife()
+    public void SaveLife(HealthBase healthBase)
     {
-        //_saveSetup.health = HealthBase.Instance.
+        _saveSetup.health = healthBase.CurrentLife;
         Save();
     }
 
-    public void SaveLastCheckpoint(int level)
+    public void SaveLastCheckpoint(int level, HealthBase playerHealthBase)
     {
         _saveSetup.lastLevel = level;
         SaveItems();
-        SaveLife();
+        SaveLife(playerHealthBase);
         Save();
     }
 
@@ -97,7 +97,6 @@ public class SaveManager : Singleton<SaveManager>
         {
             fileLoaded = File.ReadAllText(_path);
             _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
-
             lastLevel = _saveSetup.lastLevel;
         }
         else
@@ -105,7 +104,6 @@ public class SaveManager : Singleton<SaveManager>
             CreateNewSave();
             Save();
         }
-
 
         FileLoaded.Invoke(_saveSetup);
     }
@@ -126,7 +124,9 @@ public class SaveManager : Singleton<SaveManager>
 public class SaveSetup
 {
     public int lastLevel;
+
     public float coins;
+    public float lifePack;
     public float health;
 
     public string playerName;

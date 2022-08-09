@@ -16,7 +16,9 @@ public class CheckpointSave : MonoBehaviour
         {
             _chekpointActive = true;
 
-            SaveManager.Instance.SaveLastCheckpoint(currentLevel);
+            HealthBase healthBase = p.GetComponent<HealthBase>();
+
+            SaveManager.Instance.SaveLastCheckpoint(currentLevel, healthBase);
         }
     }
 }

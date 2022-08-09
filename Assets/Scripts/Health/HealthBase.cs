@@ -6,7 +6,6 @@ using Cloth;
 
 public class HealthBase : MonoBehaviour, IDamageable
 {
-
     public float startLife = 10f;
     public bool destroyOnKill = false;
 
@@ -18,6 +17,11 @@ public class HealthBase : MonoBehaviour, IDamageable
 
     public float damageMultiply = 1f;
 
+
+    public float CurrentLife
+    {
+        get { return _currentLife; }
+    }
 
     private void Awake() {
         Init();

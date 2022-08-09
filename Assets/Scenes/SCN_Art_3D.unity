@@ -1324,8 +1324,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.08
-  m_Center: {x: 0, y: 0, z: 0.05}
+  m_Radius: 0.045
+  m_Center: {x: 0, y: 0, z: 0.04}
 --- !u!114 &163230727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,7 +1675,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283443926}
-  m_LocalRotation: {x: 0.18255739, y: 0.00000001891404, z: -0.0000000035119139, w: 0.98319525}
+  m_LocalRotation: {x: 0.18255739, y: -0.000000018914042, z: 0.0000000035119143, w: 0.98319525}
   m_LocalPosition: {x: -7.6243896, y: 4.4161787, z: -10.84861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3689,7 +3689,7 @@ MonoBehaviour:
   _currentLife: 0
   uIFillUpdater:
   - {fileID: 1932489320}
-  damageMultiply: 1
+  damageMultiply: 2
 --- !u!65 &644200865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14792,6 +14792,18 @@ PrefabInstance:
     - target: {fileID: 1861980101910411873, guid: 558730f692aeed84cac9ae3bcefdb8a4, type: 3}
       propertyPath: m_Name
       value: PFB_CheckpointTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497846925664941283, guid: 558730f692aeed84cac9ae3bcefdb8a4, type: 3}
+      propertyPath: m_Size.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497846925664941283, guid: 558730f692aeed84cac9ae3bcefdb8a4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497846925664941283, guid: 558730f692aeed84cac9ae3bcefdb8a4, type: 3}
+      propertyPath: m_Size.z
+      value: 0.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 558730f692aeed84cac9ae3bcefdb8a4, type: 3}
