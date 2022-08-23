@@ -9,6 +9,8 @@ public class GunBase : MonoBehaviour
     public float timeBetweenShoot = .3f;
     public float speed = 50f;
 
+    public AudioSource shootSound;
+
     public KeyCode keyCode = KeyCode.Z;
 
     private Coroutine _currentCoroutine;
@@ -19,6 +21,8 @@ public class GunBase : MonoBehaviour
         if(Input.GetKeyDown(keyCode))
         {
             _currentCoroutine = StartCoroutine(ShootCoroutine());
+
+            if(prefabProjectile != null) shootSound.Play();
         }
         else if(Input.GetKeyUp(keyCode))
         {
