@@ -6,6 +6,9 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: ANIM_Astronaut_Run
+  - first:
+      74: -8114931947577523676
+    second: ANIM_Astronaut Run
   externalObjects: {}
   materials:
     materialImportMode: 2
